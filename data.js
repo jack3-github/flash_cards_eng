@@ -4,11 +4,11 @@
 const flashcardsData = [
 // fruit
     {
-        questionImage: './images/fruit/Apple.jpg',
+        questionImage: './images/fruit/apple.jpg',
         answerText: 'Apple',
     },
     {
-        questionImage: './images/fruit/Banana.jpg',
+        questionImage: './images/fruit/banana.jpg',
         answerText: 'Banana',
     },
     {
@@ -45,7 +45,7 @@ const flashcardsData = [
     },
 // animal
     {
-        questionImage: './images/animal/Dog.jpg',
+        questionImage: './images/animal/dog.jpg',
         answerText: 'Dog',
     },
 
