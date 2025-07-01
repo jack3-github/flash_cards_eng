@@ -85,8 +85,6 @@ function speakText(text) {
         console.warn("英語のボイスが見つかりませんでした。デフォルトのボイスを使用します。");
     }
 
-    utterance.voice = selectedVoice; // 選択したボイスを設定
-
     utterance.rate = 1.0; // 読み上げ速度（0.1から10.0、デフォルト1.0）
     utterance.pitch = 1.0; // ピッチ（0.0から2.0、デフォルト1.0）
 
