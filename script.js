@@ -76,30 +76,13 @@ function speakText(text) {
     }
     const utterance = new SpeechSynthesisUtterance(text);
 
-    // --------------------------------------------------------
-    // より自然な英語ボイスを探すためのロジックを強化
-    // --------------------------------------------------------
-    let selectedVoice = null;
-
-    // 優先度1: Google系の英語ボイス（Android Chromeなどで利用可能）
-    selectedVoice = voices.find(voice => 
-        voice.name.includes('Google') && voice.lang === 'en-US'
-    );
-
-    // 優先度2: その他の標準的なen-USボイス
-    if (!selectedVoice) {
-        selectedVoice = voices.find(voice => 
-            voice.lang === 'en-US' || voice.lang.startsWith('en-')
-        );
-    }
-
-    // 優先度3: 英語ボイスが見つからなければ、利用可能な最初のボイス
-    if (!selectedVoice && voices.length > 0) {
-        selectedVoice = voices[0];
-        console.warn("適切な英語ボイスが見つかりませんでした。利用可能な最初のボイスを使用します。");
-    } else if (!selectedVoice) {
-        console.warn("利用可能なボイスがありません。");
-        return; // ボイスがなければ再生しない
+    // 英語のボイスを探して設定（'en-US'などの言語コード）
+    const englishVoice = voices.find(voice => voice.lang === 'en-US' || voice.lang.startsWith('en-'));
+    if (englishVoice) {
+        utterance.voice = englishVoice;
+    } else {
+        // 適切な英語ボイスが見つからない場合、デフォルトのボイスを使用
+        console.warn("英語のボイスが見つかりませんでした。デフォルトのボイスを使用します。");
     }
 
     utterance.voice = selectedVoice; // 選択したボイスを設定
