@@ -2,13 +2,19 @@
 // ここにフラッシュカードのデータを記述します。
 
 const flashcardsData = [
+// fruit
     {
-        questionImage: './images/fruit/apple.jpg', // テスト用の画像URL2
-        answerText: 'apple（りんご）',
+        questionImage: './images/fruit/apple.jpg',
+        answerText: 'apple',
     },
     {
-        questionImage: './images/fruit/banana.jpg', // テスト用の画像URL3
-        answerText: 'banana（ばなな）',
+        questionImage: './images/fruit/banana.jpg',
+        answerText: 'banana',
     },
-    // 必要に応じて、さらに問題を追加してください。
+// animal
+    {
+        questionImage: './images/animal/dog.jpg',
+        answerText: 'dog',
+    },
+
 ];
