@@ -48,5 +48,57 @@ const flashcardsData = [
         questionImage: './images/animal/dog.jpg',
         answerText: 'Dog',
     },
-
+    {
+        questionImage: './images/animal/Bear.jpg',
+        answerText: 'Bear',
+    },
+    {
+        questionImage: './images/animal/Cat.jpg',
+        answerText: 'Cat',
+    },
+    {
+        questionImage: './images/animal/dog.jpg',
+        answerText: 'Dog',
+    },
+    {
+        questionImage: './images/animal/Elephant.jpg',
+        answerText: 'Elephant',
+    },
+    {
+        questionImage: './images/animal/Fish.jpg',
+        answerText: 'Fish',
+    },
+    {
+        questionImage: './images/animal/Lion.jpg',
+        answerText: 'Lion',
+    },
+    {
+        questionImage: './images/animal/Monkey.jpg',
+        answerText: 'Monkey',
+    },
+    {
+        questionImage: './images/animal/Panda.jpg',
+        answerText: 'Panda',
+    },
+    {
+        questionImage: './images/animal/Tiger.jpg',
+        answerText: 'Tiger',
+    },
+// ride
+    {
+        questionImage: './images/ride/Airplane.jpg',
+        answerText: 'Airplane',
+    },
+    {
+        questionImage: './images/ride/Bus.jpg',
+        answerText: 'Bus',
+    },
+    {
+        questionImage: './images/ride/Car.jpg',
+        answerText: 'Car',
+    },
+    {
+        questionImage: './images/ride/Train.jpg',
+        answerText: 'Train',
+    },
 ];
