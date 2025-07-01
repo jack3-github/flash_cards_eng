@@ -69,26 +69,83 @@ function showAnswer() {
 }
 
 // Web Speech APIを使ってテキストを読み上げる関数
+//function speakText(text) {
+//    if (synth.speaking) {
+//        // すでに読み上げ中であれば停止
+//        synth.cancel();
+//    }
+//    const utterance = new SpeechSynthesisUtterance(text);
+//
+//    // 英語のボイスを探して設定（'en-US'などの言語コード）
+//    const englishVoice = voices.find(voice => voice.lang === 'en-US' || voice.lang.startsWith('en-'));
+//    if (englishVoice) {
+//        utterance.voice = englishVoice;
+//    } else {
+//        // 適切な英語ボイスが見つからない場合、デフォルトのボイスを使用
+//        console.warn("英語のボイスが見つかりませんでした。デフォルトのボイスを使用します。");
+//    }
+//
+//    utterance.rate = 1.0; // 読み上げ速度（0.1から10.0、デフォルト1.0）
+//    utterance.pitch = 1.0; // ピッチ（0.0から2.0、デフォルト1.0）
+//
+//    // 読み上げ開始
+//    synth.speak(utterance);
+//}
+
 function speakText(text) {
+    if (!synth) {
+        console.error("SpeechSynthesis API が利用できません。");
+        return;
+    }
     if (synth.speaking) {
         // すでに読み上げ中であれば停止
         synth.cancel();
     }
+    
     const utterance = new SpeechSynthesisUtterance(text);
 
-    // 英語のボイスを探して設定（'en-US'などの言語コード）
-    const englishVoice = voices.find(voice => voice.lang === 'en-US' || voice.lang.startsWith('en-'));
-    if (englishVoice) {
-        utterance.voice = englishVoice;
-    } else {
-        // 適切な英語ボイスが見つからない場合、デフォルトのボイスを使用
-        console.warn("英語のボイスが見つかりませんでした。デフォルトのボイスを使用します。");
+    // ★重要: ここで明示的に言語を英語(アメリカ)に指定します。
+    // これがAndroidの「システムの言語を使用」を上書きしようと試みます。
+    utterance.lang = 'en-US'; 
+
+    let selectedVoice = null;
+
+    // 優先度1: Google系の英語ボイス（Android Chromeなどで利用可能）を探す
+    // `voice.name.includes('Google')`でGoogle系のボイスを優先
+    selectedVoice = voices.find(voice => 
+        voice.name.includes('Google') && voice.lang === 'en-US'
+    );
+
+    // 優先度2: もしGoogle系のボイスが見つからなければ、その他の標準的なen-USボイスを探す
+    if (!selectedVoice) {
+        selectedVoice = voices.find(voice => 
+            voice.lang === 'en-US' || voice.lang.startsWith('en-')
+        );
+    }
+    
+    // 優先度3: それでも適切な英語ボイスが見つからなければ、利用可能な最初のボイスを使う
+    // （品質は劣る可能性があるが、何かしら音が出る可能性を高める）
+    if (!selectedVoice && voices.length > 0) {
+        selectedVoice = voices[0]; 
+        console.warn("適切な英語ボイスが見つかりませんでした。利用可能な最初のボイスを使用します。");
+    } else if (!selectedVoice) {
+        // 利用可能なボイスが全くない場合
+        console.warn("利用可能なボイスが全くありません。発音機能は動作しません。");
+        playAudioBtn.disabled = true; // ボタンを無効化
+        return; // ボイスがなければ再生しない
     }
 
+    utterance.voice = selectedVoice; // 選択したボイスを設定
+    
     utterance.rate = 1.0; // 読み上げ速度（0.1から10.0、デフォルト1.0）
     utterance.pitch = 1.0; // ピッチ（0.0から2.0、デフォルト1.0）
 
-    // 読み上げ開始
+    // エラーハンドリングを追加（より確実にするため）
+    utterance.onerror = (event) => {
+        console.error('SpeechSynthesisUtterance error:', event);
+        console.error('Error name:', event.error); // エラーの種類（e.g., 'not-allowed', 'network'など）
+    };
+
     synth.speak(utterance);
 }
 
