@@ -1,104 +1,66 @@
-// data.js
-// ここにフラッシュカードのデータを記述します。
-
+﻿
 const flashcardsData = [
-// fruit
-    {
-        questionImage: './images/fruit/apple.jpg',
-        answerText: 'Apple',
-    },
-    {
-        questionImage: './images/fruit/banana.jpg',
-        answerText: 'Banana',
-    },
-    {
-        questionImage: './images/fruit/Cherry.jpg',
-        answerText: 'Cherry',
-    },
-    {
-        questionImage: './images/fruit/Grape.jpg',
-        answerText: 'Grape',
-    },
-    {
-        questionImage: './images/fruit/Lemon.jpg',
-        answerText: 'Lemon',
-    },
-    {
-        questionImage: './images/fruit/Orange.jpg',
-        answerText: 'Orange',
-    },
-    {
-        questionImage: './images/fruit/Peach.jpg',
-        answerText: 'Peach',
-    },
-    {
-        questionImage: './images/fruit/Pear.jpg',
-        answerText: 'Pear',
-    },
-    {
-        questionImage: './images/fruit/Pineapple.jpg',
-        answerText: 'Pineapple',
-    },
-    {
-        questionImage: './images/fruit/Strawberry.jpg',
-        answerText: 'Strawberry',
-    },
-// animal
-    {
-        questionImage: './images/animal/dog.jpg',
-        answerText: 'Dog',
-    },
-    {
-        questionImage: './images/animal/Bear.jpg',
-        answerText: 'Bear',
-    },
-    {
-        questionImage: './images/animal/Cat.jpg',
-        answerText: 'Cat',
-    },
-    {
-        questionImage: './images/animal/dog.jpg',
-        answerText: 'Dog',
-    },
-    {
-        questionImage: './images/animal/Elephant.jpg',
-        answerText: 'Elephant',
-    },
-    {
-        questionImage: './images/animal/Fish.jpg',
-        answerText: 'Fish',
-    },
-    {
-        questionImage: './images/animal/Lion.jpg',
-        answerText: 'Lion',
-    },
-    {
-        questionImage: './images/animal/Monkey.jpg',
-        answerText: 'Monkey',
-    },
-    {
-        questionImage: './images/animal/Panda.jpg',
-        answerText: 'Panda',
-    },
-    {
-        questionImage: './images/animal/Tiger.jpg',
-        answerText: 'Tiger',
-    },
-// ride
-    {
-        questionImage: './images/ride/Airplane.jpg',
-        answerText: 'Airplane',
-    },
-    {
-        questionImage: './images/ride/Bus.jpg',
-        answerText: 'Bus',
-    },
-    {
-        questionImage: './images/ride/Car.jpg',
-        answerText: 'Car',
-    },
-    {
-        questionImage: './images/ride/Train.jpg',
-        answerText: 'Train',
-    },
+    { "questionImage": "images/animal/Bear.jpg", "answerText": "Bear" },
+    { "questionImage": "images/animal/Cat.jpg", "answerText": "Cat" },
+    { "questionImage": "images/animal/Dog.jpg", "answerText": "Dog" },
+    { "questionImage": "images/animal/Elephant.jpg", "answerText": "Elephant" },
+    { "questionImage": "images/animal/Fish.jpg", "answerText": "Fish" },
+    { "questionImage": "images/animal/Lion.jpg", "answerText": "Lion" },
+    { "questionImage": "images/animal/Monkey.jpg", "answerText": "Monkey" },
+    { "questionImage": "images/animal/Panda.jpg", "answerText": "Panda" },
+    { "questionImage": "images/animal/Tiger.jpg", "answerText": "Tiger" },
+    { "questionImage": "images/calendar/Friday.jpg", "answerText": "Friday" },
+    { "questionImage": "images/calendar/Monday.jpg", "answerText": "Monday" },
+    { "questionImage": "images/calendar/Saturday.jpg", "answerText": "Saturday" },
+    { "questionImage": "images/calendar/Sunday.jpg", "answerText": "Sunday" },
+    { "questionImage": "images/calendar/Thursday.jpg", "answerText": "Thursday" },
+    { "questionImage": "images/calendar/Tuesday.jpg", "answerText": "Tuesday" },
+    { "questionImage": "images/calendar/Wednesday.jpg", "answerText": "Wednesday" },
+    { "questionImage": "images/fruit/Apple.jpg", "answerText": "Apple" },
+    { "questionImage": "images/fruit/Banana.jpg", "answerText": "Banana" },
+    { "questionImage": "images/fruit/Cherry.jpg", "answerText": "Cherry" },
+    { "questionImage": "images/fruit/Grape.jpg", "answerText": "Grape" },
+    { "questionImage": "images/fruit/Lemon.jpg", "answerText": "Lemon" },
+    { "questionImage": "images/fruit/Orange.jpg", "answerText": "Orange" },
+    { "questionImage": "images/fruit/Peach.jpg", "answerText": "Peach" },
+    { "questionImage": "images/fruit/Pear.jpg", "answerText": "Pear" },
+    { "questionImage": "images/fruit/Pineapple.jpg", "answerText": "Pineapple" },
+    { "questionImage": "images/fruit/Strawberry.jpg", "answerText": "Strawberry" },
+    { "questionImage": "images/number/Eight.jpg", "answerText": "Eight" },
+    { "questionImage": "images/number/Eleven.jpg", "answerText": "Eleven" },
+    { "questionImage": "images/number/Five.jpg", "answerText": "Five" },
+    { "questionImage": "images/number/Four.jpg", "answerText": "Four" },
+    { "questionImage": "images/number/Nine.jpg", "answerText": "Nine" },
+    { "questionImage": "images/number/One.jpg", "answerText": "One" },
+    { "questionImage": "images/number/OneHundred.jpg", "answerText": "OneHundred" },
+    { "questionImage": "images/number/OneThousand.jpg", "answerText": "OneThousand" },
+    { "questionImage": "images/number/Seven.jpg", "answerText": "Seven" },
+    { "questionImage": "images/number/Six.jpg", "answerText": "Six" },
+    { "questionImage": "images/number/Ten.jpg", "answerText": "Ten" },
+    { "questionImage": "images/number/Three.jpg", "answerText": "Three" },
+    { "questionImage": "images/number/Twelve.jpg", "answerText": "Twelve" },
+    { "questionImage": "images/number/Two.jpg", "answerText": "Two" },
+    { "questionImage": "images/ride/Airplane.jpg", "answerText": "Airplane" },
+    { "questionImage": "images/ride/Ambulance.jpg", "answerText": "Ambulance" },
+    { "questionImage": "images/ride/Bicycle.jpg", "answerText": "Bicycle" },
+    { "questionImage": "images/ride/Bus.jpg", "answerText": "Bus" },
+    { "questionImage": "images/ride/Car.jpg", "answerText": "Car" },
+    { "questionImage": "images/ride/FireTruck.jpg", "answerText": "FireTruck" },
+    { "questionImage": "images/ride/Helicopter.jpg", "answerText": "Helicopter" },
+    { "questionImage": "images/ride/Motorcycle.jpg", "answerText": "Motorcycle" },
+    { "questionImage": "images/ride/PoliceCar.jpg", "answerText": "PoliceCar" },
+    { "questionImage": "images/ride/Ship.jpg", "answerText": "Ship" },
+    { "questionImage": "images/ride/Submarine.jpg", "answerText": "Submarine" },
+    { "questionImage": "images/ride/Train.jpg", "answerText": "Train" },
+    { "questionImage": "images/ride/Truck.jpg", "answerText": "Truck" },
+    { "questionImage": "images/vegetables/Broccoli.jpg", "answerText": "Broccoli" },
+    { "questionImage": "images/vegetables/Cabbage.jpg", "answerText": "Cabbage" },
+    { "questionImage": "images/vegetables/Carrot.jpg", "answerText": "Carrot" },
+    { "questionImage": "images/vegetables/Corn.jpg", "answerText": "Corn" },
+    { "questionImage": "images/vegetables/Cucumber.jpg", "answerText": "Cucumber" },
+    { "questionImage": "images/vegetables/Onion.jpg", "answerText": "Onion" },
+    { "questionImage": "images/vegetables/Pepper.jpg", "answerText": "Pepper" },
+    { "questionImage": "images/vegetables/Potato.jpg", "answerText": "Potato" },
+    { "questionImage": "images/vegetables/Pumpkin.jpg", "answerText": "Pumpkin" },
+    { "questionImage": "images/vegetables/Tomato.jpg", "answerText": "Tomato" }
 ];
